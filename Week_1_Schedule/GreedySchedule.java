@@ -1,13 +1,16 @@
+/*
+    Right answers for jobs.txt: 69119377652 and 67311454237
+                  for test.txt: 145924 and 138232
+
+*/
+
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-@SuppressWarnings("unchecked")
 public class GreedySchedule {
     
     private static class Task {
@@ -57,7 +60,7 @@ public class GreedySchedule {
     }
     
     
-    public static void main(String[] args) throws FileNotFoundException {   // unit testing
+    public static void main(String[] args) throws FileNotFoundException {   
         Comparator<Task> diffComparator = new TasksDiffComparator();
         Comparator<Task> divideComparator = new TasksDivideComparator();
         PriorityQueue<Task> queueDif = new PriorityQueue<>(10000, diffComparator);
@@ -74,10 +77,6 @@ public class GreedySchedule {
             queueDif.add(t);
             queueDiv.add(t);
         }
-            
-            
-            
-        
         
         long SumDif = 0;
         long CurrentC = 0;
@@ -104,41 +103,5 @@ public class GreedySchedule {
         System.out.println("Weighted summ according to differences equals " + SumDif);
         System.out.println("Weighted summ according to division equals " + SumDiv);
         
-        
-        
-        
-        
-        
-        
-        
-//        RandomizedQueue<Integer> intsDeque = new RandomizedQueue<>();
-//        int TESTS_NUMBER = 5;
-//        String result = "";
-//        
-//        for (int i = 0; i < TESTS_NUMBER; i++) {
-//            System.out.println("..enqueing " + i);
-//            intsDeque.enqueue(i);
-//            //System.out.println("..pushing " + PUSHED_VALUE);
-//            //intsDeque.addFirst(PUSHED_VALUE);
-//            result = result + " " + i;
-//        }
-//        int M = intsDeque.N + 1;
-//        System.out.println("Resulting deque: " + result);
-//        System.out.println("Its size: " + M);
-//        System.out.println("Resulting deque: ");
-//        for (Integer i : intsDeque) {
-//            System.out.println("In first iterator: ");
-//            System.out.println(i + " ");
-//            System.out.println("Starting another iterator: ");
-//            for (Integer j : intsDeque) {
-//                System.out.print(j + " ");
-//            }
-//        }
-//        System.out.println();
-//        System.out.println("..dequeing:");
-//        while (!intsDeque.isEmpty()) {
-//            System.out.println(intsDeque.dequeue());
-//        }
-//   
     }
 }
