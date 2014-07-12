@@ -25,6 +25,7 @@ public class GreedySchedule {
 
     private static class TasksDiffComparator implements Comparator<Task>
     {
+        @Override
         public int compare(Task x, Task y)
         {
             if ( (x.w - x.l) < (y.w - y.l) ) {
@@ -45,6 +46,7 @@ public class GreedySchedule {
    
     private static class TasksDivideComparator implements Comparator<Task>
     {
+        @Override
         public int compare(Task x, Task y)
         {
             if ( ((double)x.w /(double) x.l) < ((double)y.w / (double)y.l) ) {
